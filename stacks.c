@@ -1,17 +1,17 @@
 #include<stdio.h>
 int stack[100],choice,n,top,x,i;
-void push(void);
-void pop(void);
-void display(void);
+void push();
+void pop();
+void display();
+void peek();
 int main()
 {
-    //clrscr();
+    
     top=-1;
     printf("\n Enter the size of STACK[MAX=100]:");
     scanf("%d",&n);
     printf("\n\t STACK OPERATIONS USING ARRAY");
-    printf("\n\t--------------------------------");
-    printf("\n\t 1.PUSH\n\t 2.POP\n\t 3.DISPLAY\n\t 4.EXIT");
+    printf("\n\t 1.PUSH\n\t 2.POP\n\t 3.DISPLAY\n\t 4.EXIT\n\t 5.PEEK");
     do
     {
         printf("\n Enter the Choice:");
@@ -38,6 +38,11 @@ int main()
                 printf("\n\t EXIT POINT ");
                 break;
             }
+            case 5:
+            {
+            	peek();
+            	break;
+            }
             default:
             {
                 printf ("\n\t Please Enter a Valid Choice(1/2/3/4)");
@@ -52,7 +57,7 @@ void push()
 {
     if(top>=n-1)
     {
-        printf("\n\tSTACK is over flow");
+        printf("\n\tSTACK  overflow");
         
     }
     else
@@ -67,11 +72,11 @@ void pop()
 {
     if(top<=-1)
     {
-        printf("\n\t Stack is under flow");
+        printf("\n\t Stack underflow");
     }
     else
     {
-        printf("\n\t The popped elements is %d",stack[top]);
+        printf("\n\t The popped element is %d",stack[top]);
         top--;
     }
 }
@@ -89,4 +94,13 @@ void display()
         printf("\n The STACK is empty");
     }
    
+}
+
+void peek()
+{
+	if(top==-1){
+	printf("\n\tThe Stack is empty!");
+	}else{
+	printf("\t%d" , stack[top]);
+	}
 }
