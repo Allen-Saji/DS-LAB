@@ -78,8 +78,10 @@ int main()
 		switch(ch){
 				
 		   case 3:display();
+			break;
 		
 		   case 4:exit(0);
+			break;
 		   }
 	
 	
@@ -201,7 +203,7 @@ void delete_at_end()
 	{
 		head = NULL;
 		free(head);
-		printf("Only node of the lis t is deleted \n");
+		printf("Only node of the list is deleted \n");
 	}
 	else
 	{
